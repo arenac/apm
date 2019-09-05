@@ -12,7 +12,7 @@ import { StarComponent } from './shared/start.component';
     AppComponent,
     ProductListComponent,
     ConverToSpacesPipe,
-    StarComponent
+    StarComponent,
   ],
   imports: [
     BrowserModule,

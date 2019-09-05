@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
+import { ProductService } from 'src/api/products/product.service';
 
 @Component({
   selector: 'pm-products',
@@ -24,10 +25,7 @@ export class ProductListComponent implements OnInit {
     this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
   }
 
-  constructor() {
-    this.filteredProducts = this.products;
-    this.listFilter = "cart";
-  }
+  constructor(private productService: ProductService) { }
 
   onRatingClicked(message: string): void {
     console.log(message);
@@ -65,7 +63,8 @@ export class ProductListComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    console.log("Prodct List oninit");
+    this.products = this.productService.getProducts();
+    this.filteredProducts = this.products;
   }
 
   toggleImage(): void {
