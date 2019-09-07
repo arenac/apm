@@ -8,7 +8,7 @@ import { ProductDetailComponent } from './product-detail.component';
 import { ConverToSpacesPipe } from '../shared/convert-to-spaces.pipe';
 import { StarComponent } from '../shared/start.component';
 import { ProductDetailGuard } from './product-detail.guard';
-
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import { ProductDetailGuard } from './product-detail.guard';
       { path: 'products/:id',
         canActivate: [ProductDetailGuard],
         component: ProductDetailComponent },
-    ])
+    ]),
+    SharedModule
   ],
   declarations: [
     ProductListComponent,
