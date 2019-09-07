@@ -27,7 +27,6 @@ import { SharedModule } from '../shared/shared.module';
     ProductListComponent,
     ProductDetailComponent,
     ConverToSpacesPipe,
-    StarComponent
   ]
 })
 export class ProductModule { }
